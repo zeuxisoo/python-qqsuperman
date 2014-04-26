@@ -3,6 +3,7 @@
 import pytest
 import unittest
 from collections import namedtuple
+from qqsuperman import QQSuperman
 
 class TestQQSuperman(unittest.TestCase):
     @pytest.fixture(autouse=True)
@@ -13,9 +14,10 @@ class TestQQSuperman(unittest.TestCase):
 
         self.username = username
         self.password = password
+        self.superman = QQSuperman(username, password)
 
     def test_remainder_point(self):
-        pass
+        self.assertRegexpMatches(self.superman.remainder_point(), r'^[0-9]+$')
 
     def test_decode_image(self):
         pass
