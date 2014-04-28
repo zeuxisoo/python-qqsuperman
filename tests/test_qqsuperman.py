@@ -27,4 +27,7 @@ class TestQQSuperman(unittest.TestCase):
         self.assertEqual(len(content['worker']), 32)
 
     def test_report_error(self):
-        pass
+        content = self.superman.decode_image(os.path.dirname(__file__) + '/sample/2.jpg')
+        status  = self.superman.report_error(content['worker'])
+
+        self.assertEqual(status, '1')
