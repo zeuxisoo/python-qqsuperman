@@ -24,3 +24,6 @@ clean-pyc:
 
 create-dist: clean
 	@python setup.py sdist
+
+upload-dist:
+	@python setup.py sdist upload
