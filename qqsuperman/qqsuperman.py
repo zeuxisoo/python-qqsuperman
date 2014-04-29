@@ -4,10 +4,6 @@
 import requests
 import itertools
 
-__version__ = '0.1.0'
-__author__  = 'Zeuxis Lo'
-__email__   = 'seekstudio@gmail.com'
-
 class QQSuperman(object):
 
     api = "http://api.sz789.net:88/index.do"
