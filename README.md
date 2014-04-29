@@ -1,8 +1,8 @@
-#### Python-QQSuperman
+# Python-QQSuperman
 
 A RESET API wrapper for the QQSuperman
 
-#### Installation
+## Installation
 
 Make sure you have python 2.7 and pip installed
 
@@ -10,7 +10,7 @@ Run command
 
     pip install qqsuperman
 
-#### Usage
+## Usage
 
 Instance the object
 
