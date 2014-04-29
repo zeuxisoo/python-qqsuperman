@@ -1,5 +1,6 @@
 include Makefile
 include requirements.txt
+include qqsuperman.py
 recursive-include tests *
 recursive-exclude tests *.pyc
 recursive-exclude tests *.pyo
