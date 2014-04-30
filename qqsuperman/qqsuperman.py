@@ -22,8 +22,15 @@ class QQSuperman(object):
 
         return response.text
 
-    def decode_image(self, image):
-        image_data = open(image).read().encode('hex')
+    def decode_image(self, path=None, hex_content=None):
+        if path:
+            image_data = open(path).read().encode('hex')
+
+        if hex_content:
+            image_data = hex_content
+
+        if not path and not hex_content:
+            raise ValueError('Please provide path or hex content')
 
         response = requests.post(self.api, data={
             'm'       : 'send',
