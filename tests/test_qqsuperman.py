@@ -20,8 +20,15 @@ class TestQQSuperman(unittest.TestCase):
     def test_remainder_point(self):
         self.assertRegexpMatches(self.superman.remainder_point(), r'^[0-9]+$')
 
-    def test_decode_image(self):
+    def test_decode_image_path(self):
         content = self.superman.decode_image(os.path.dirname(__file__) + '/sample/1.jpg')
+
+        self.assertEqual(content['code'].lower(), 'nmvt')
+        self.assertEqual(len(content['worker']), 32)
+
+    def test_decode_image_hex_content(self):
+        hex_content = open(os.path.dirname(__file__) + '/sample/1.jpg').read().encode('hex')
+        content     = self.superman.decode_image(hex_content=hex_content)
 
         self.assertEqual(content['code'].lower(), 'nmvt')
         self.assertEqual(len(content['worker']), 32)
